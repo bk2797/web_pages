@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sıkça Sorulan Sorular | Uzm. Dr. Nurettin Kavcı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .faq-section {
+            max-width: 800px;
+            margin: 42px auto 36px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.11);
+            padding: 34px 18px 18px 18px;
+        }
+        .faq-title {
+            color: #673AB7;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .faq-item {
+            background: #f7f7fd;
+            border-radius: 9px;
+            box-shadow: 0 1px 8px #9575CD11;
+            padding: 17px 22px;
+            transition: box-shadow 0.16s;
+            cursor: pointer;
+        }
+        .faq-question {
+            color: #673AB7;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .faq-answer {
+            color: #9575CD;
+            font-size: 1rem;
+            margin-top: 5px;
+            display: none;
+            line-height: 1.55;
+        }
+        .faq-answer video {
+            width: 100%;
+            max-width: 680px;
+            height: auto;
+            margin-top: 10px;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-item:hover {
+            box-shadow: 0 3px 16px #9575CD22;
+        }
+        @media (max-width: 600px) {
+            .faq-section { padding: 10px 2vw; }
+            .faq-title { font-size: 1.37rem;}
+            .faq-item { padding: 11px 9px;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="img/nk_logo_gimp_w_b.png" alt="nk_logo"></a>
+            </div>
+            <ul>
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a href="Hakkımızda.html">Hakkımızda</a></li>
+                <li><a href="SSS.html" style="color:#9575CD;">Sık Sorulan Sorular</a></li>
+                <li><a href="Fotoğraflar.html">Fotoğraflar</a></li>
+                <li><a href="İletişim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="faq-section">
+            <div class="faq-title">Sıkça Sorulan Sorular</div>
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Randevu nasıl alabilirim?
+                    </div>
+                    <div class="faq-answer">
+                        Telefon numaramızdan veya <b>WhatsApp</b> üzerinden bizimle iletişime geçerek hızlıca randevu oluşturabilirsiniz. Ayrıca iletişim sayfamızdaki bağlantıları kullanabilirsiniz.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Gebelik takibi için ne sıklıkta muayene olmalıyım?
+                    </div>
+                    <div class="faq-answer">
+                        Gebeliğin ilk 28 haftasında genellikle ayda bir, 28-36. haftalar arasında 2 haftada bir, sonrasında ise haftada bir kez doktor kontrolü önerilmektedir. Ancak her hasta özelinde takip aralığı değişebilir.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        GETAT uygulamaları (botoks, dolgu, mezoterapi vb.) güvenli midir?
+                    </div>
+                    <div class="faq-answer">
+                        Evet, GETAT uygulamaları alanında eğitimli ve sertifikalı bir hekim tarafından steril koşullarda ve uygun teknikle yapılırsa güvenlidir. İşlem öncesi ve sonrası aklınıza takılan tüm soruları bize iletebilirsiniz.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Jinekolojik muayene ağrılı mıdır?
+                    </div>
+                    <div class="faq-answer">
+                        Jinekolojik muayene genellikle ağrısızdır ve kısa sürer. Hastanın rahat olması için gerekli tüm önlemler alınır. Endişeleriniz varsa muayene öncesi bizimle paylaşabilirsiniz.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Adet düzensizliğinde ne zaman doktora başvurmalıyım?
+                    </div>
+                    <div class="faq-answer">
+                        2-3 aydan uzun süren düzensizlikler, aşırı kanama, ağrı, ara kanama veya beklenmedik diğer değişiklikler varsa en kısa sürede jinekoloğa başvurmanız önerilir.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Kliniğe gelirken yanımda neler getirmeliyim?
+                    </div>
+                    <div class="faq-answer">
+                        Varsa önceki tetkik, tahlil veya raporlarınızı, kullandığınız ilaçların bir listesini ve kimliğinizi getirmeniz yeterlidir.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        İnfertilite (kısırlık) tanı ve tedavi hizmetleriniz var mı?
+                    </div>
+                    <div class="faq-answer">
+                        Evet, yardımcı üreme teknikleri, aşılama, tüp bebek ve diğer tedavilerle ilgili hizmet sunmaktayız. Detaylı bilgi ve değerlendirme için randevu alabilirsiniz.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Mezoterapi gençlik ve cilt yenileme için nasıl bir etki sağlar?
+                    </div>
+                    <div class="faq-answer">
+                        <video width="480" controls>
+                            <source src="img/Mezoterapi_reklam.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Polikistik over sendromu (PCOS) tedavisinde hangi yöntemleri kullanıyorsunuz?
+                    </div>
+                    <div class="faq-answer">
+                        <video width="480" controls>
+                            <source src="img/Polikistik Over Sendromu.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Çip Aşılama için Tedavi süreci nasıl işliyor?
+                    </div>
+                    <div class="faq-answer">
+                        <video width="480" controls>
+                            <source src="img/cip_asilama_tedavi_sureci.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+
+
+
+
+                
+                <div class="hero h2"> 
+                    <h2>Sorunuzu burda bulamadınız mı? İletişim bilgilerimiz için <b><a href="İletişim.html">tıklayın.</a></b></h2>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-top">
+            <div class="testimonial">
+            <blockquote>
+                <p>
+                    Web sitemizin içeriği, ziyaretçiyi bilgilendirmeye yönelik hazırlanmıştır. 
+                    Sitede yer alan bilgiler, hiçbir zaman bir hekim tedavisinin ya da konsültasyonunun yerini alamaz. 
+                    Bu kaynaktan yola çıkarak, ilaç tedavisine başlanması ya da mevcut tedavinin değiştirilmesi kesinlikle tavsiye edilmez. 
+                    Web sitemizin içeriği asla kişisel teşhis ya da tedavi yönteminin seçimi için değerlendirilmemelidir. 
+                    Sitede kanun içeriğine aykırı ilan ve reklam yapma kastı bulunmamaktadır.
+                </p>
+                <footer>
+                    <span>Opr. Dr. Nurettin Kavcı</span>
+                </footer>
+            </blockquote>
+        </div>
+            <div class="footer-links">
+                <div>
+                    <h4><a href="SSS.html">SSS</h4></a> 
+                </div>
+                <div>
+                    <h4><a href="Hakkımızda.html">Hakkımızda</h4></a>
+                </div>
+                <div>
+                    <h4><a href="İletişim.html"> İletişim</h4></a>
+                    
+                    <div class="footer-socials">
+                        <a href="tel:+905302365326" title="Telefon">Telefon:+905302365326</a>
+                        <a href="https://wa.me/905302365326?text=Merhaba,%20web%20sitenizden%20ulaşıyorum." target="_blank" title="WhatsApp">WhatsApp</a>
+                        <a href="https://m.me/nurettin.kavc.2025?ref=Merhaba%20hocam%2C%20web%20sitenizden%20ulaşıyorum." target="_blank">Facebook Messenger</a>
+                        <a href="https://x.com/NurettinKavc3">Twitter</a>
+                        <a href="https://www.instagram.com/op.dr.nurettinkavci/">İnstagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright © 2025 UZM. DR. NURETTİN KAVCI</span>
+        </div>
+    </footer>
+    <script>
+    // Sadece .faq-question'a tıklanınca aç/kapat
+    document.querySelectorAll('.faq-item .faq-question').forEach(q => {
+        q.addEventListener('click', function(e) {
+            const item = this.parentElement;
+            if(item.classList.contains('active')) {
+                item.classList.remove('active');
+            } else {
+                document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('active'));
+                item.classList.add('active');
+            }
+            e.stopPropagation();
+        });
+    });
+</script>
+</body>
+</html>

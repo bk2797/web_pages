@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotoğraflar | Uzm. Dr. Nurettin Kavcı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery-section {
+            max-width: 850px;
+            margin: 50px auto 30px auto;
+            padding: 30px 16px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+            text-align: center;
+        }
+        .gallery-section h1 {
+            color: #673AB7;
+            margin-bottom: -5px;
+            font-weight: 700;
+        }
+        .gallery-section h2 {
+            margin-bottom: 20px;
+        }
+        .main-photo {
+            width: 100%;
+            max-width: 600px;
+            max-height: 410px;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px #9575CD33;
+            margin-bottom: 16px;
+            transition: 0.2s;
+            cursor: zoom-in;
+        }
+        .thumbnail-row-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 4px;
+        }
+        .thumb-nav-btn {
+            background: #9575CD;
+            border: none;
+            color: #fff;
+            font-size: 1.7rem;
+            width: 36px; height: 48px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.18s;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .thumb-nav-btn:disabled { opacity: 0.45; cursor: default;}
+        .thumbnail-row {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+        .thumbnail-row img {
+            width: 70px;
+            height: 55px;
+            object-fit: cover;
+            border-radius: 7px;
+            border: 2px solid #ccc;
+            cursor: pointer;
+            transition: 0.15s;
+        }
+        .thumbnail-row img.active {
+            border-color: #673AB7;
+            box-shadow: 0 0 6px #9575CD55;
+        }
+
+        /* Responsive Modal */
+        .gallery-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(60, 20, 80, 0.80);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.3s;
+        }
+        .gallery-modal.hide {
+            display: none;
+        }
+        .gallery-modal .close-modal {
+            position: absolute;
+            top: 32px;
+            right: 42px;
+            background: #fff;
+            color: #673AB7;
+            border: none;
+            font-size: 2.5rem;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px #0003;
+            z-index: 10;
+            transition: background 0.18s;
+            opacity: 0.94;
+        }
+        .gallery-modal .close-modal:hover {
+            background: #ececec;
+            color: #311b92;
+        }
+        .gallery-modal-img, .lightbox-img {
+            max-width: 99vw;
+            max-height: 98vh;
+            width: auto;
+            height: auto;
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: 0 8px 42px #673ab777, 0 2px 24px #2224;
+            display: block;
+            margin: auto;
+            object-fit: contain;
+            animation: fadeInModalImg 0.32s cubic-bezier(.3,.7,.4,1.05);
+            padding: 0;
+        }
+        @keyframes fadeInModalImg {
+            from { opacity: 0; transform: scale(0.6);}
+            to { opacity: 1; transform: scale(1);}
+        }
+        @media (max-width: 950px) {
+            .gallery-section { max-width: 99vw;}
+            .main-photo { max-width: 98vw; max-height: 36vw;}
+        }
+        @media (max-width: 700px) {
+            .gallery-section {
+                margin: 12px 1vw;
+                padding: 6px 2vw 16px 2vw;
+            }
+            .main-photo {
+                max-width: 97vw;
+                max-height: 41vw;
+                min-height: 160px;
+            }
+            .thumb-nav-btn { width: 28px; height: 38px; font-size: 1.27rem;}
+            .thumbnail-row img { width: 40px; height: 32px;}
+            .gallery-modal .close-modal {
+                top: 8px;
+                right: 12px;
+                width: 38px;
+                height: 38px;
+                font-size: 2rem;
+            }
+            .gallery-modal-img {
+                max-width: 98vw;
+                max-height: 72vh;
+                border-radius: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="img/nk_logo_gimp_w_b.png" alt="nk_logo"></a>
+            </div>
+            <ul>
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a href="Hakkımızda.html">Hakkımızda</a></li>
+                <li><a href="SSS.html">Sık Sorulan Sorular</a></li>
+                <li><a href="Fotoğraflar.html" style="color:#9575CD;">Fotoğraflar</a></li>
+                <li><a href="İletişim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="gallery-section">
+            <h1 style="color:#673AB7;margin-bottom:24px;">Fotoğraf Galerisi</h1>
+            <img id="mainPhoto" src="img/foto1.jpg" class="main-photo" alt="Ana Fotoğraf" tabindex="0">
+            <div class="thumbnail-row-wrapper">
+                <button class="thumb-nav-btn" id="thumbPrevBtn">&#60;</button>
+                <div class="thumbnail-row" id="thumbRow"></div>
+                <button class="thumb-nav-btn" id="thumbNextBtn">&#62;</button>
+            </div>
+        </section>
+        <!-- Responsive Modal -->
+        <div id="galleryModal" class="gallery-modal hide">
+            <button class="close-modal" aria-label="Kapat">&times;</button>
+            <img src="" alt="Büyük Fotoğraf" class="gallery-modal-img">
+        </div>
+    </main>
+    <footer>
+        <div class="footer-top">
+            <div class="testimonial">
+            <blockquote>
+                <p>
+                    Web sitemizin içeriği, ziyaretçiyi bilgilendirmeye yönelik hazırlanmıştır. 
+                    Sitede yer alan bilgiler, hiçbir zaman bir hekim tedavisinin ya da konsültasyonunun yerini alamaz. 
+                    Bu kaynaktan yola çıkarak, ilaç tedavisine başlanması ya da mevcut tedavinin değiştirilmesi kesinlikle tavsiye edilmez. 
+                    Web sitemizin içeriği asla kişisel teşhis ya da tedavi yönteminin seçimi için değerlendirilmemelidir. 
+                    Sitede kanun içeriğine aykırı ilan ve reklam yapma kastı bulunmamaktadır.
+                </p>
+                <footer>
+                    <span>Opr. Dr. Nurettin Kavcı</span>
+                </footer>
+            </blockquote>
+        </div>
+            <div class="footer-links">
+                <div>
+                    <h4><a href="SSS.html">SSS</h4></a> 
+                </div>
+                <div>
+                    <h4><a href="Hakkımızda.html">Hakkımızda</h4></a>
+                </div>
+                <div>
+                    <h4><a href="İletişim.html"> İletişim</h4></a>
+                    
+                    <div class="footer-socials">
+                        <a href="tel:+905302365326" title="Telefon">Telefon:+905302365326</a>
+                        <a href="https://wa.me/905302365326?text=Merhaba,%20web%20sitenizden%20ulaşıyorum." target="_blank" title="WhatsApp">WhatsApp</a>
+                        <a href="https://m.me/nurettin.kavc.2025?ref=Merhaba%20hocam%2C%20web%20sitenizden%20ulaşıyorum." target="_blank">Facebook Messenger</a>
+                        <a href="https://x.com/NurettinKavc3">Twitter</a>
+                        <a href="https://www.instagram.com/op.dr.nurettinkavci/">İnstagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright © 2025 UZM. DR. NURETTİN KAVCI</span>
+        </div>
+    </footer>
+    <script>
+        // Fotoğraflar
+        const photos = [
+            'img/Kıymetli_bebeklerin_doktoru.jpeg',
+            'img/mezo_botoks.jpeg',
+            'img/mezo_reklam_img.png',
+            'img/mezo_reklam_img_2.png',
+            'img/ameliyat_1.jpeg',
+            'img/ameliyat_2.jpeg',
+            'img/ameliyat_3.jpeg',
+            'img/ameliyat_4.jpeg',
+            'img/ameliyat_5.jpeg',
+            'img/ameliyat_6.jpeg',
+            'img/hastayla_1.jpeg',
+            'img/hastayla_2.jpeg',
+            'img/hastayla_3.jpeg',
+            'img/hastayla_4.jpeg',
+            'img/hastayla_5.jpeg',
+            'img/hastayla_6.jpeg',
+        ];
+        let mainIdx = 0;
+        let thumbStart = 0;
+        const thumbMax = 5;
+
+        const mainPhoto = document.getElementById('mainPhoto');
+        const thumbRow = document.getElementById('thumbRow');
+        const btnPrev = document.getElementById('thumbPrevBtn');
+        const btnNext = document.getElementById('thumbNextBtn');
+
+        function renderThumbnails() {
+            thumbRow.innerHTML = '';
+            for(let i=thumbStart; i<Math.min(thumbStart+thumbMax, photos.length); i++){
+                const img = document.createElement('img');
+                img.src = photos[i];
+                img.alt = 'Thumbnail';
+                if(i===mainIdx) img.classList.add('active');
+                img.onclick = ()=> setMainPhoto(i);
+                thumbRow.appendChild(img);
+            }
+            btnPrev.disabled = (thumbStart===0);
+            btnNext.disabled = (thumbStart+thumbMax>=photos.length);
+        }
+
+        function setMainPhoto(idx) {
+            mainIdx = idx;
+            mainPhoto.src = photos[idx];
+            if(mainIdx < thumbStart) thumbStart = mainIdx;
+            else if(mainIdx >= thumbStart+thumbMax) thumbStart = mainIdx-thumbMax+1;
+            renderThumbnails();
+        }
+
+        btnPrev.onclick = ()=>{
+            if(thumbStart > 0){
+                thumbStart--;
+                renderThumbnails();
+            }
+        }
+        btnNext.onclick = ()=>{
+            if(thumbStart+thumbMax < photos.length){
+                thumbStart++;
+                renderThumbnails();
+            }
+        }
+
+        // Responsive Modal (Büyüt)
+        const galleryModal = document.getElementById('galleryModal');
+        const galleryModalImg = galleryModal.querySelector('.gallery-modal-img');
+        const closeBtn = galleryModal.querySelector('.close-modal');
+
+        mainPhoto.onclick = ()=>{
+            galleryModalImg.src = photos[mainIdx];
+            galleryModal.classList.remove('hide');
+        };
+        closeBtn.onclick = ()=> galleryModal.classList.add('hide');
+        galleryModal.onclick = (e)=>{
+            if(e.target === galleryModal) galleryModal.classList.add('hide');
+        };
+        // ESC ile kapansın
+        document.addEventListener('keydown', function(e){
+            if(e.key==="Escape") galleryModal.classList.add('hide');
+        });
+
+        setMainPhoto(0);
+    </script>
+</body>
+</html>

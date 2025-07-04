@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | Uzm. Dr. Nurettin Kavcı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    .contact-section {
+        background: #fff;
+        border-radius: 14px;
+        margin: 45px auto 38px auto;
+        max-width: 680px;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+        padding: 34px 28px 28px 28px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2.2px solid #9575CD;
+    }
+    .contact-section h1 {
+        font-size: 2.1rem;
+        font-weight: 700;
+        margin-bottom: 18px;
+        color: #673AB7;
+        letter-spacing: 1px;
+    }
+    .contact-infos {
+        margin-top: 20px;
+        width: 100%;
+        font-size: 1.04rem;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+        text-align: center;
+    }
+    .contact-infos b {
+        font-weight: 700;
+        color: #673AB7;
+    }
+    .contact-infos a {
+        color: #9575CD;
+        text-decoration: underline;
+    }
+    .contact-socials {
+        margin-top: 16px;
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        justify-content: center;
+    }
+    .contact-socials a {
+        color: #fff;
+        font-size: 1.1rem;
+        background: #9575CD;
+        padding: 8px 14px;
+        border-radius: 7px;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+    }
+    .contact-socials a:hover {
+        background: #673AB7;
+        color: #fff;
+    }
+    .map-iframe {
+        margin-top: 25px;
+        width: 100%;
+        border-radius: 12px;
+        border: 1.5px solid #9575CD;
+        min-height: 230px;
+        max-height: 340px;
+    }
+    @media (max-width: 700px) {
+        .contact-section { 
+        padding: 11px 2vw 13px 2vw; 
+        margin: 14px auto 22px auto;
+    }
+    .contact-infos {
+        font-size: 0.94rem;
+        gap: 9px;
+    }
+    .contact-socials, .footer-socials {
+        gap: 6px !important;
+        margin-top: 8px;
+        flex-wrap: wrap;
+    }
+    .contact-socials a, .footer-socials a {
+        font-size: 0.94rem !important;
+        padding: 5px 8px !important;
+        border-radius: 6px;
+        min-width: 67px;
+        min-height: 34px;
+        line-height: 1.1;
+    }
+    .map-container {
+        margin-top: 10px !important;
+    }
+    .map-iframe {
+        min-height: 140px !important;
+        max-height: 170px !important;
+    }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="img/nk_logo_gimp_w_b.png" alt="nk_logo"></a>
+            </div>
+            <ul>
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a href="Hakkımızda.html">Hakkımızda</a></li>
+                <li><a href="SSS.html">Sık Sorulan Sorular</a></li>
+                <li><a href="Fotoğraflar.html">Fotoğraflar</a></li>
+                <li><a href="İletişim.html" style="color:#9575CD;">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-section">
+            <h1>İletişim</h1>
+            <div class="contact-infos">
+                <div><b>Adres:</b><br>
+                    Değirmiçem, İmam Hüseyin İncioğlu Cd. NO:7, 27090 Şehitkamil/Gaziantep
+                </div>
+            </div>
+            
+            <div class="contact-socials">
+                <div class="footer-socials">
+                        <a href="tel:+905302365326" title="Telefon">Telefon</a>
+                        <a href="https://wa.me/905302365326?text=Merhaba,%20web%20sitenizden%20ulaşıyorum." target="_blank" title="WhatsApp">WhatsApp</a>
+                        <a href="https://m.me/nurettin.kavc.2025?ref=Merhaba%20hocam%2C%20web%20sitenizden%20ulaşıyorum." target="_blank">Messenger</a>
+                        <a href="https://x.com/NurettinKavc3">Twitter</a>
+                        <a href="https://www.instagram.com/op.dr.nurettinkavci/">İnstagram</a>
+                    </div>
+            </div>
+            <div class="map-container" style="width:100%;margin-top:20px;">
+                <iframe 
+                    class="map-iframe"
+                    src="https://www.google.com/maps?q=Değirmiçem,+İmam+Hüseyin+İncioğlu+Cd.+NO:7,+27090+Şehitkamil/Gaziantep&output=embed"
+                    width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-top">
+            <div class="testimonial">
+                <blockquote>
+                    <p>
+                        Web sitemizin içeriği, ziyaretçiyi bilgilendirmeye yönelik hazırlanmıştır. 
+                        Sitede yer alan bilgiler, hiçbir zaman bir hekim tedavisinin ya da konsültasyonunun yerini alamaz. 
+                        Bu kaynaktan yola çıkarak, ilaç tedavisine başlanması ya da mevcut tedavinin değiştirilmesi kesinlikle tavsiye edilmez. 
+                        Web sitemizin içeriği asla kişisel teşhis ya da tedavi yönteminin seçimi için değerlendirilmemelidir. 
+                        Sitede kanun içeriğine aykırı ilan ve reklam yapma kastı bulunmamaktadır.
+                    </p>
+                    <footer>
+                        <span>Opr. Dr. Nurettin Kavcı</span>
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4><a href="SSS.html">SSS</h4></a> 
+                </div>
+                <div>
+                    <h4><a href="Hakkımızda.html">Hakkımızda</h4></a>
+                </div>
+                <div>
+                    <h4><a href="İletişim.html"> İletişim</h4></a>
+                    
+                    <div class="footer-socials">
+                        <a href="tel:+905302365326" title="Telefon">Telefon:+905302365326</a>
+                        <a href="https://wa.me/905302365326?text=Merhaba,%20web%20sitenizden%20ulaşıyorum." target="_blank" title="WhatsApp">WhatsApp</a>
+                        <a href="https://m.me/nurettin.kavc.2025?ref=Merhaba%20hocam%2C%20web%20sitenizden%20ulaşıyorum." target="_blank">Facebook Messenger</a>
+                        <a href="https://x.com/NurettinKavc3">Twitter</a>
+                        <a href="https://www.instagram.com/op.dr.nurettinkavci/">İnstagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright © 2025 UZM. DR. NURETTİN KAVCI</span>
+        </div>
+    </footer>
+</body>
+</html>
